@@ -1,0 +1,28 @@
+{
+  "name": "@mh-cbon/which-service-manager",
+  "version": "1.0.0",
+  "description": "Tells which service manager the system is running",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "service",
+    "windows",
+    "macos",
+    "systemd",
+    "launchd",
+    "upstart",
+    "chkconfig",
+    "sc"
+  ],
+  "author": "mh-cbon <mh-cbon@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@mh-cbon/has-chkconfig": "^1.0.3",
+    "@mh-cbon/has-launchd": "^1.0.2",
+    "@mh-cbon/has-sc": "^1.0.2",
+    "@mh-cbon/has-systemd": "^1.0.1",
+    "@mh-cbon/has-upstart": "^1.0.3"
+  }
+}
