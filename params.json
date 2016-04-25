@@ -1,0 +1,6 @@
+{
+  "name": "Which-service-manager",
+  "tagline": "Tells which service manager the system is running",
+  "body": "# which-service-manager\r\n\r\nTells the service manager running on the current system.\r\n\r\n# Install\r\n\r\n```sh\r\nnpm i @mh-cbon/which-service-manager --save\r\n```\r\n\r\n# Usage\r\n\r\n```js\r\nrequire('@mh-cbon/which-service-manager')(function (err, serviceManager, bin) {\r\n  // serviceManager is one of\r\n  // - systemd\r\n  // - upstart\r\n  // - chkconfig\r\n  // - launchd\r\n  // - sc\r\n  err && console.error(err);\r\n  !err && console.log(\"System found is %s\", serviceManager);\r\n  !err && bin && console.log(\"It provides a binary path %s\", bin);\r\n})\r\n```\r\n\r\n# Todos\r\n- add openrc support (gentoo)\r\n\r\n# Read more\r\n- https://github.com/mh-cbon/has-systemd\r\n- https://github.com/mh-cbon/has-upstart\r\n- https://github.com/mh-cbon/has-chkconfig\r\n- https://github.com/mh-cbon/has-launchd\r\n- https://github.com/mh-cbon/has-sc\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
