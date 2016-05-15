@@ -11,17 +11,32 @@ npm i @mh-cbon/which-service-manager --save
 # Usage
 
 ```js
-require('@mh-cbon/which-service-manager')(function (err, serviceManager, bin) {
+// print list of identifiable service manager
+console.log(require('@mh-cbon/which-service-manager').sysInits);
   // serviceManager is one of
   // - systemd
   // - upstart
   // - chkconfig
   // - launchd
   // - sc
+
+// get current system manager
+require('@mh-cbon/which-service-manager')(function (err, serviceManager, bin) {
   err && console.error(err);
   !err && console.log("System found is %s", serviceManager);
   !err && bin && console.log("It provides a binary path %s", bin);
 })
+
+// get all system manager running on the system
+require('@mh-cbon/which-service-manager').all(function (err, sysInits) {
+  err && console.error(err);
+  !err && console.log("Init systems found is %j", sysInits);
+  Object.keys(sysInits).forEach(function (system) {
+    !err && bin && console.log("It provides %s a binary path %s", system.sys, system.path);
+  })
+})
+
+
 ```
 
 # Todos
