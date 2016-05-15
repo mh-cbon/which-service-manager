@@ -1,6 +1,6 @@
 {
   "name": "@mh-cbon/which-service-manager",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tells which service manager the system is running",
   "main": "index.js",
   "scripts": {
