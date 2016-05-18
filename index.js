@@ -6,6 +6,7 @@ whichServiceManager.sysInits = [
   'chkconfig',
   'launchd',
   'sc',
+  'sysv',
 ]
 whichServiceManager.all = function (then) {
   var foundSysInit = {}
@@ -38,6 +39,12 @@ whichServiceManager.all = function (then) {
     function (next) {
       require('@mh-cbon/has-sc')(function (err, scPath) {
         if(!err) foundSysInit.sc = {sys: 'sc', path: scPath};
+        next()
+      })
+    },
+    function (next) {
+      require('@mh-cbon/has-sysv')(function (err) {
+        if(!err) foundSysInit.sysv = {sys: 'sysv', path: ''};
         next()
       })
     },

@@ -19,6 +19,7 @@ console.log(require('@mh-cbon/which-service-manager').sysInits);
   // - chkconfig
   // - launchd
   // - sc
+  // - sysv
 
 // get current system manager
 require('@mh-cbon/which-service-manager')(function (err, serviceManager, bin) {
@@ -30,7 +31,7 @@ require('@mh-cbon/which-service-manager')(function (err, serviceManager, bin) {
 // get all system manager running on the system
 require('@mh-cbon/which-service-manager').all(function (err, sysInits) {
   err && console.error(err);
-  !err && console.log("Init systems found is %j", sysInits);
+  !err && console.log("Init systems found are %j", sysInits);
   Object.keys(sysInits).forEach(function (system) {
     !err && bin && console.log("It provides %s a binary path %s", system.sys, system.path);
   })
@@ -48,3 +49,4 @@ require('@mh-cbon/which-service-manager').all(function (err, sysInits) {
 - https://github.com/mh-cbon/has-chkconfig
 - https://github.com/mh-cbon/has-launchd
 - https://github.com/mh-cbon/has-sc
+- https://github.com/mh-cbon/has-sysv
